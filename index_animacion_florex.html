@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌷 Jardín de Tulipanes Neón | v2</title>
+    <link href="style_flores.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="not-loaded">
+    <h1 class="title">🌷 Tulipanes Neón</h1>
+    <button class="reloadBtn" onclick="bloomFlower()">🌸 Florecer</button>
+
+    <div class="mensaje-especial" id="mensajeEspecial">🌷 🌷 🌷</div>
+
+    <audio id="musicaFondo" loop volume="0.3">
+    <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_2d4d8c5c8c.mp3" type="audio/mpeg">
+</audio>
+
+    <div class="night">
+        <div class="luna"></div>
+    </div>
+
+    <div class="frase-inspiradora" id="fraseInspiradora">La belleza florece en la oscuridad</div>
+    
+    <div class="flowers">
+        <!-- FLOR 1 -->
+        <div class="flower flower--1">
+            <div class="flower__leafs flower__leafs--1">
+                <!-- Pétalos traseros (z-index: 1) -->
+                <div class="flower__leaf flower__leaf--1"></div>
+                <div class="flower__leaf flower__leaf--2"></div>
+                <div class="flower__leaf flower__leaf--3"></div>
+                
+                <!-- CENTRO AMARILLO (z-index: 2) - AHORA ENTRE LOS PÉTALOS -->
+                <div class="flower__white-circle"></div>
+                
+                <!-- Pétalo frontal (z-index: 3) - TAPA PARCIALMENTE EL CENTRO -->
+                <div class="flower__leaf flower__leaf--4"></div>
+                
+                <!-- Luces mágicas -->
+                <div class="flower__light flower__light--1"></div>
+                <div class="flower__light flower__light--2"></div>
+                <div class="flower__light flower__light--3"></div>
+                <div class="flower__light flower__light--4"></div>
+                <div class="flower__light flower__light--5"></div>
+                <div class="flower__light flower__light--6"></div>
+                <div class="flower__light flower__light--7"></div>
+                <div class="flower__light flower__light--8"></div>
+            </div>
+            <div class="flower__line">
+                <div class="flower__line__leaf flower__line__leaf--1"></div>
+                <div class="flower__line__leaf flower__line__leaf--2"></div>
+                <div class="flower__line__leaf flower__line__leaf--3"></div>
+                <div class="flower__line__leaf flower__line__leaf--4"></div>
+                <div class="flower__line__leaf flower__line__leaf--5"></div>
+                <div class="flower__line__leaf flower__line__leaf--6"></div>
+            </div>
+        </div>
+
+        <!-- FLOR 2 (misma estructura) -->
+        <div class="flower flower--2">
+            <div class="flower__leafs flower__leafs--2">
+                <div class="flower__leaf flower__leaf--1"></div>
+                <div class="flower__leaf flower__leaf--2"></div>
+                <div class="flower__leaf flower__leaf--3"></div>
+                <div class="flower__white-circle"></div>
+                <div class="flower__leaf flower__leaf--4"></div>
+                <div class="flower__light flower__light--1"></div>
+                <div class="flower__light flower__light--2"></div>
+                <div class="flower__light flower__light--3"></div>
+                <div class="flower__light flower__light--4"></div>
+                <div class="flower__light flower__light--5"></div>
+                <div class="flower__light flower__light--6"></div>
+                <div class="flower__light flower__light--7"></div>
+                <div class="flower__light flower__light--8"></div>
+            </div>
+            <div class="flower__line">
+                <div class="flower__line__leaf flower__line__leaf--1"></div>
+                <div class="flower__line__leaf flower__line__leaf--2"></div>
+                <div class="flower__line__leaf flower__line__leaf--3"></div>
+                <div class="flower__line__leaf flower__line__leaf--4"></div>
+            </div>
+        </div>
+
+        <!-- FLOR 3 (misma estructura) -->
+        <div class="flower flower--3">
+            <div class="flower__leafs flower__leafs--3">
+                <div class="flower__leaf flower__leaf--1"></div>
+                <div class="flower__leaf flower__leaf--2"></div>
+                <div class="flower__leaf flower__leaf--3"></div>
+                <div class="flower__white-circle"></div>
+                <div class="flower__leaf flower__leaf--4"></div>
+                <div class="flower__light flower__light--1"></div>
+                <div class="flower__light flower__light--2"></div>
+                <div class="flower__light flower__light--3"></div>
+                <div class="flower__light flower__light--4"></div>
+                <div class="flower__light flower__light--5"></div>
+                <div class="flower__light flower__light--6"></div>
+                <div class="flower__light flower__light--7"></div>
+                <div class="flower__light flower__light--8"></div>
+            </div>
+            <div class="flower__line">
+                <div class="flower__line__leaf flower__line__leaf--1"></div>
+                <div class="flower__line__leaf flower__line__leaf--2"></div>
+                <div class="flower__line__leaf flower__line__leaf--3"></div>
+                <div class="flower__line__leaf flower__line__leaf--4"></div>
+            </div>
+        </div>
+
+        <!-- Pasto y decoraciones -->
+        <div class="grow-ans" style="--d: 1.2s">
+            <div class="flower__g-long">
+                <div class="flower__g-long__top"></div>
+                <div class="flower__g-long__bottom"></div>
+            </div>
+        </div>
+        <div class="growing-grass">
+            <div class="flower__grass flower__grass--1">
+                <div class="flower__grass--top"></div>
+                <div class="flower__grass--bottom"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+                <div class="flower__grass__overlay"></div>
+            </div>
+        </div>
+        <div class="growing-grass">
+            <div class="flower__grass flower__grass--2">
+                <div class="flower__grass--top"></div>
+                <div class="flower__grass--bottom"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+                <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+                <div class="flower__grass__overlay"></div>
+            </div>
+        </div>
+        
+        <div class="long-g long-g--0">
+            <div class="grow-ans" style="--d: 3s"><div class="leaf leaf--0"></div></div>
+            <div class="grow-ans" style="--d: 2.2s"><div class="leaf leaf--1"></div></div>
+        </div>
+        <div class="long-g long-g--1">
+            <div class="grow-ans" style="--d: 3.6s"><div class="leaf leaf--0"></div></div>
+            <div class="grow-ans" style="--d: 3.8s"><div class="leaf leaf--1"></div></div>
+        </div>
+    </div>
+
+    <script>
+        function bloomFlower() {
+            if (document.body.classList.contains('not-loaded')) {
+                document.body.classList.remove("not-loaded");
+                document.querySelector('.reloadBtn').textContent = '🔄 Reiniciar';
+            } else {
+                location.reload();
+            }
+        }
+
+
+
+    function bloomFlower() {
+    if (document.body.classList.contains('not-loaded')) {
+        document.body.classList.remove("not-loaded");
+        document.querySelector('.reloadBtn').textContent = '🔄 Reiniciar';
+        
+        // Mostrar mensaje especial después de 2 segundos
+        setTimeout(() => {
+            document.getElementById('mensajeEspecial').classList.add('visible');
+        }, 2000);
+    } else {
+        location.reload();
+    }
+}
+
+
+
+
+
+
+function bloomFlower() {
+    if (document.body.classList.contains('not-loaded')) {
+        document.body.classList.remove("not-loaded");
+        document.querySelector('.reloadBtn').textContent = '🔄 Reiniciar';
+        
+        // Reproducir música suave
+        const musica = document.getElementById('musicaFondo');
+        musica.volume = 0.2;
+        musica.play().catch(e => console.log("Esperando interacción del usuario"));
+        
+        // Mostrar mensaje
+        setTimeout(() => {
+            document.getElementById('mensajeEspecial').classList.add('visible');
+        }, 2000);
+    } else {
+        location.reload();
+    }
+}
+
+
+const frases = [
+    "Algunas flores brillan más cuando alguien especial las mira",
+    "No todos los jardines tienen tulipanes neón... este es único",
+    "Hay miradas que hacen florecer hasta el código",
+    "Dicen que las flores crecen hacia donde hay luz",
+    "En este jardín digital, alguien piensa en ti",
+    "Los tulipanes no hablan... pero a veces dicen mucho",
+    "Programar flores es fácil cuando hay inspiración",
+    "Hay personas que son como tulipanes: brillan en la oscuridad",
+    "Este jardín tiene un bug... late más rápido cuando lo miras",
+    "No sé dibujar, pero sé programar flores"
+];
+
+function bloomFlower() {
+    if (document.body.classList.contains('not-loaded')) {
+        document.body.classList.remove("not-loaded");
+        document.querySelector('.reloadBtn').textContent = '🔄 Reiniciar';
+        
+        // Frase aleatoria 
+        const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
+        document.getElementById('fraseInspiradora').textContent = fraseAleatoria;
+        
+        // Mensaje principal
+        setTimeout(() => {
+            document.getElementById('mensajeEspecial').classList.add('visible');
+        }, 2000);
+    } else {
+        location.reload();
+    }
+}
+    </script>
+</body>
+</html>
